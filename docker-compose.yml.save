@@ -1,0 +1,11 @@
+version: "3"
+
+services: 
+     build: .
+     web:
+        container_name: apache2simulator
+        image: apache2:latest
+        ports: 
+            - "8081:80"
+        restart: always
+

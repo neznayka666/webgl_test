@@ -1,0 +1,11 @@
+version: "3"
+
+services: 
+    web:
+        container_name: webgl-client
+        image: apache2
+        ports: 
+            - "9095:9095"
+#        volumes: 
+#            - "/var/www/html1/:/var/www/html/"
+        restart: always

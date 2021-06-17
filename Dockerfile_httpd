@@ -1,0 +1,5 @@
+FROM httpd:2.4
+COPY ./html/ /usr/local/apache2/htdocs/
+VOLUME /var/www/test:/var/www/html
+RUN echo AddEncoding x-gzip .gz .tgz > /usr/local/apache2/conf/httpd.conf && echo LoadModule brotli_module modules/mod_brotli.so > /usr/local/apache2/conf/httpd.conf && echo application/gzip > /usr/local/apache2/conf/mime.types  && echo application/x-gzip > /usr/local/apache2/conf/mime.types && systemctl restart apache2 && service restart apache2
+
